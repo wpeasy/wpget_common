@@ -1,0 +1,36 @@
+{
+  "name": "wpget-common",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Internal Functions",
+  "main": "index.js",
+  "scripts": {
+    "build": "SET NODE_ENV=production&& webpack ",
+    "build:watch": "SET NODE_ENV=production&& webpack  -w",
+    "dev": "SET NODE_ENV=development&&webpack ",
+    "dev:watch": "SET NODE_ENV=development&webpack -w"
+  },
+  "author": "",
+  "license": "proprietary",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "config": "^3.3.6",
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "path": "^0.12.7",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.45.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "splitting": "^1.0.6"
+  }
+}

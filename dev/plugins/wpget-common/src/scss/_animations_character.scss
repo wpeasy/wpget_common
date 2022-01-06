@@ -1,0 +1,290 @@
+/******************************
+ WPGet Entry Animation rules
+ */
+.wpg-char-drop-rotate{
+  --char-duration: .7s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wwpg-char-drop-rotate var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-char-drop-rotate var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-char-drop-rotate {
+  0% {
+    transform: translateY(-1em) rotate(-.5turn) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+.wpg-char-drop-down {
+  --char-duration: .7s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-char-drop-down var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-char-drop-down var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-char-drop-down {
+  0% {
+    transform: translateY(-60px) scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+.wpg-char-drop-up {
+  --char-duration: .7s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-char-drop-up var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-char-drop-up var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-char-drop-up {
+  0% {
+    transform: translateY(60px) scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+.wpg-char-in-right {
+  --char-duration: .7s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-char-in-right var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-char-in-right var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      transform: translateX(40px);
+    }
+  }
+}
+
+@keyframes wpg-char-in-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+.wpg-char-in-left{
+  --char-duration: .7s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-char-in-left var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-char-in-left var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      transform: translateX(-40px);
+    }
+  }
+}
+
+@keyframes wpg-char-in-left {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.wpg-char-zoom-pop {
+  --char-duration: .7s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-char-zoom-pop  var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-char-zoom-pop  var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-char-zoom-pop {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  99% {
+    transform: scale(3);
+    opacity: .8;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.wpg-char-spin {
+  --char-duration: .5s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-char-spin  var(--char-duration) cubic-bezier(.5, 0, .5, 1) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-char-spin  var(--char-duration) ease-in-out both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-char-spin {
+  0% {
+    opacity: 0;
+    transform: rotate(2turn) scaleX(1);
+  }
+  50%{
+    transform: rotate(1turn) scaleX(2);
+  }
+  100%{
+    transform: rotate(0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+.wpg-y-flip-in {
+  --char-duration: 1.5s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-y-flip-in  var(--char-duration)  cubic-bezier(0.645, 0.045, 0.355, 1.000) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-y-flip-in var(--char-duration)  cubic-bezier(0.645, 0.045, 0.355, 1.000) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-y-flip-in  {
+  0% {
+    transform: scale(1) rotateY(0);
+  }
+  50% {
+    transform: scale(2) rotateY(180deg);
+  }
+  100% {
+    transform: scale(1) rotateY(360deg);
+  }
+}
+
+.wpg-x-flip-in {
+  --char-duration: 1.5s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-x-flip-in  var(--char-duration)  cubic-bezier(0.645, 0.045, 0.355, 1.000) both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-x-flip-in var(--char-duration)  cubic-bezier(0.645, 0.045, 0.355, 1.000) both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-x-flip-in  {
+  0% {
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    transform: scale(2) rotateX(180deg);
+  }
+  100% {
+    transform: scale(1) rotateX(360deg);
+  }
+}
+
+.wpg-rotate-dtr{
+  --char-duration: 1s;
+  --duration: var(--wpg-animated-normal) ;
+
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+  .splitting {
+    .char {
+      animation: wpg-rotate-dtr var(--char-duration) linear both;
+      animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+      -webkit-animation: wpg-rotate-dtr var(--char-duration) linear both;
+      -webkit-animation-delay: calc((var(--duration) / var(--char-total)) * var(--char-index));
+    }
+  }
+}
+
+@keyframes wpg-rotate-dtr  {
+  0% {
+    transform: rotate3d(1, 1, 0, 0deg);
+    transform-origin: 100% 0%;
+  }
+  50% {
+    transform: rotate3d(1, 1, 0, -180deg);
+    transform-origin: 100% 0%;
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, -360deg);
+    transform-origin: 100% 0%;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "uglify": true,
+  "sourcemap": true,
+  "open": false,
+  "publicPath": "../../../wp-content/plugins/wpget-common"
+}

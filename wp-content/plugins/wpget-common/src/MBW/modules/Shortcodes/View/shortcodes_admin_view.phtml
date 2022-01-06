@@ -1,0 +1,32 @@
+<div class="wrap">
+    <div id="icon-themes" class="icon32"></div>
+    <h2>WPGet Common Shortcodes</h2>
+    <h3>Cockoblock Related:</h3>
+    <table class="wp-list-table widefat fixed striped table-view-list">
+        <thead>
+        <tr><th>Shortcode</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                [wpg_crockoblock_get_option page_slug="business-details" option="business-name"]
+            </td>
+            <td>Gets an option from a Crockoblock Options Page. See the options to find the correct page_slug and option to use.<br/>This enables you to use teh options inline with other text.</td>
+        </tr>
+        <tr>
+            <td>[current_date format="d/m/Y"]</td>
+            <td>
+                <p>Returns current formatted date. "format" is optional and defaults to "d/m/Y.</p>
+                <p>e.g. to  just get current year in 4 digits [current_date format="d/m/Y"]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>[site_url]</td>
+            <td>
+                <p>Simply outputs the home page site URL.</p>
+                <p>e.g. [site_url] <?= do_shortcode('[site_url]') ?></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

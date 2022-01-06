@@ -1,0 +1,80 @@
+
+/*
+ SplittingJS enhancements
+ Classes to change colours of split Words
+ Note: word-even, word-odd, word-last, word-first classes are added to "words" by custom JavaScript
+ when the text elements are split by SplittingJS
+ */
+
+.word-color-{
+  &even-{
+    &primary{
+      & .word-even{
+        color: var(--e-global-color-primary);
+      }
+    }
+    &secondary{
+      & .word-even{
+        color: var(--e-global-color-secondary);
+      }
+    }
+    &accent{
+      & .word-even{
+        color: var(--e-global-color-accent);
+      }
+    }
+  }
+
+  &odd-{
+    &primary{
+      & .word-odd{
+        color: var(--e-global-color-primary);
+      }
+    }
+    &secondary{
+      & .word-odd{
+        color: var(--e-global-color-secondary);
+      }
+    }
+    &accent{
+      & .word-odd{
+        color: var(--e-global-color-accent);
+      }
+    }
+  }
+
+  &first-{
+    &primary{
+      & .word-first{
+        color: var(--e-global-color-primary);
+      }
+    }
+    &secondary{
+      & .word-first{
+        color: var(--e-global-color-secondary);
+      }
+    }
+    &accent{
+      & .word-first{
+        color: var(--e-global-color-accent);
+      }
+    }
+  }
+  &last-{
+    &primary{
+      & .word-last{
+        color: var(--e-global-color-primary);
+      }
+    }
+    &secondary{
+      & .word-last{
+        color: var(--e-global-color-secondary);
+      }
+    }
+    &accent{
+      & .word-last{
+        color: var(--e-global-color-accent);
+      }
+    }
+  }
+}

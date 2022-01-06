@@ -1,0 +1,17 @@
+{
+    "name": "alan.blair/wpget-managed",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alan Blair",
+            "email": "alan@wpget.net"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MBW\\" : "src/MBW/"
+        }
+
+    }
+}
