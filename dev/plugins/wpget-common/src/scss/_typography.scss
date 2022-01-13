@@ -1,0 +1,48 @@
+/*######################################
+# Typography
+######################################*/
+
+/************
+Force Colours
+ */
+.text-force{
+  &-white{
+    color: #ffffff !important;
+  }
+  &-black{
+    color: #000000 !important;
+  }
+  &-primary{
+    color: var(--e-global-color-primary) !important;
+  }
+  &-secondary{
+    color: var(--e-global-color-secondary) !important;
+  }
+  &-accent{
+    color: var(--e-global-color-accent) !important;
+  }
+  &-no-outline{
+    -webkit-text-stroke-width: 0 !important;;
+  }
+}
+
+/************
+Redefine <b> as Colours
+ */
+.bold-to-primary b{
+  color: var(--e-global-color-primary);
+}
+
+.bold-to-secondary b{
+  color: var(--e-global-color-secondary);
+}
+
+.bold-to-accent b{
+  color: var(--e-global-color-accent);
+}
+
+.bold-to-normal b{
+  font-weight: normal !important;
+}
+
+

@@ -47,10 +47,11 @@ class ModuleController {
 
     private static function _maybe_enqueue_styles(){
         $settings = SettingsController::get_settings();
-        if($settings['load_common_css'] == 1){
-            wp_enqueue_style('wpg-common-css', MBW_PLUGIN_URL . 'assets/css/elementor-styles.css');
+        if(@$settings['load_common_css'] == 1){
+            wp_enqueue_style('wpg-common-css', MBW_PLUGIN_URL . 'assets/css/frontend.style.min.css');
         }
-        if($settings['load_woocommerce_css'] == 1){
+        /*@todo WooCommerceStyles */
+        if(@$settings['load_woocommerce_css'] == 1){
             wp_enqueue_style('wpg-woo-css', MBW_PLUGIN_URL . 'assets/css/woocommerce-styles.css');
         }
     }

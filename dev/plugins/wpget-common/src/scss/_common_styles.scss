@@ -78,3 +78,89 @@
     }
   }
 }
+
+
+
+
+/*###### Fix CSS background image over scaling on retina / ipad screens
+ If the background-attachment is set to fixed, iy over scales on Landscape on iPads
+ This is a hack to ensure the background-attachment is overridden to "scroll" on retina screens
+ Add this class to any element with a fixed background
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2){
+  .fix-ipad-fixed-background-over-scale{
+    background-attachment: scroll !important;
+  }
+}
+
+
+/*****************
+Elementor Nav Sub Menu sift, caused by indicator being added with JS.
+Note: Cannot use the  "Pointer" with navs using this class
+Add "sub-menu-arrow-css" to any Nav to replace the indicator with CSS indicator.
+*********************/
+.sub-menu-arrow-css .elementor-item.has-submenu .sub-arrow {
+  display: none;
+}
+
+/*
+Create Nav indicator with pure CSS..
+Override this to use a font icon instead
+ */
+.sub-menu-arrow-css .elementor-item.has-submenu:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid currentColor;
+  display: inline-block;
+  transform: translateY(-50%);
+  opacity: 1 !important;
+  right: 0;
+  /* set spacing between menu item text and arrow */
+  margin-right: 0;
+  /* set vertical alignment of arrow */
+  margin-top: 7px;
+}
+
+
+
+/********************
+BULLETS
+********************/
+/*
+Set Bullet marker to an arrow. Use in Text Widgets etc.
+Add "bullet-arrow" to any Widget which contains UL elements. This will change the bullet to a right arrow.
+*/
+.bullet-arrow ul li{
+  padding-left: 5px;
+}
+.bullet-arrow ul li::marker{
+  font-family: "Font Awesome 5 Free";
+  content: "\f105";
+  font-weight: 900;
+}
+
+ul.bullet-arrow li{
+  padding-left: 5px;
+}
+ul.bullet-arrow li::marker{
+  font-family: "Font Awesome 5 Free";
+  content: "\f105";
+  font-weight: 900;
+}
+
+
+
+/*###############################
+Elementor Standard Widget Fixes
+################################*/
+/* Icon List Widget aligns icon to vertical centre of item. Add  the class icon-list-align-top to fix */
+.icon-list-align-top.elementor-widget .elementor-icon-list-item{
+  align-items: flex-start;
+}
+
+.icon-list-align-top.elementor-widget .elementor-icon-list-item .elementor-icon-list-icon{
+  margin-top: .3em;
+}

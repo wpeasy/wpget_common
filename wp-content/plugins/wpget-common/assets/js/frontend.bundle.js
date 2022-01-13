@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./js/frontend.js":
@@ -16,7 +15,18 @@
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/frontend.scss */ \"./scss/frontend.scss\");\n/* harmony import */ var _split_characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./split-characters */ \"./js/split-characters.js\");\n\n\n\n//# sourceURL=webpack:///./js/frontend.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/frontend.scss */ \"./scss/frontend.scss\");\n/* harmony import */ var _partials_split_characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/split-characters */ \"./js/partials/split-characters.js\");\n/* harmony import */ var _partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/re-animate-entrance-animations */ \"./js/partials/re-animate-entrance-animations.js\");\n/* harmony import */ var _partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n//# sourceURL=webpack:///./js/frontend.js?");
+
+/***/ }),
+
+/***/ "./js/partials/re-animate-entrance-animations.js":
+/*!*******************************************************!*\
+  !*** ./js/partials/re-animate-entrance-animations.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ \"jquery\");\nvar $ = jQuery;\nvar repeatAnimationSelector = '.repeat-entrance-animation';\nvar waitForElementorTimeout = 100;\nwindow.addEventListener('DOMContentLoaded', function () {\n  trackElementsForAnimation();\n});\n\nvar trackElementsForAnimation = function trackElementsForAnimation() {\n  var options = {\n    root: null,\n    rootMargin: '300px 0px 300px 0px',\n    threshold: 1\n  };\n  var observer = new IntersectionObserver(function (entries, observer) {\n    entries.forEach(function (e) {\n      var target = e.target;\n      var $target = $(target);\n\n      if (e.isIntersecting) {\n        /*\r\n        Get the classes to toggle here. If we get them on the observer init, Elementor would not yet have added teh animation classes.\r\n        */\n        if (undefined === target.dataset.toggleClasses) {\n          /*\r\n              waitForElementorTimeout timout allows time for Elementor to add animation classes.\r\n          */\n          setTimeout(function () {\n            setToggleClasses(target);\n          }, waitForElementorTimeout);\n        }\n\n        $target.addClass($target.data('toggle-classes'));\n        $target.css('opacity', '1');\n      } else {\n        $target.removeClass($target.data('toggle-classes'));\n        $target.css('opacity', '0');\n      }\n    });\n  }, options);\n  /*\r\n      Start observing elements\r\n   */\n\n  document.querySelectorAll(repeatAnimationSelector).forEach(function (i) {\n    if (i) {\n      observer.observe(i);\n    }\n  });\n};\n\n//# sourceURL=webpack:///./js/partials/re-animate-entrance-animations.js?");
 
 /***/ }),
 
@@ -26,6 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./scss/frontend.scss?");
 
 /***/ }),
@@ -36,6 +47,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \*************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = jQuery;
 
 /***/ })

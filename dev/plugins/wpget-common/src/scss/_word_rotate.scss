@@ -1,12 +1,16 @@
 
 .wpg-word-rotate{
-  &.split-characters{
-    & .word{
-      display: block;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left:0;
+  &.split-characters {
+    & .words {
+      position: relative;
+      & .word{
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left:0;
+        white-space: nowrap;
+      }
     }
   }
 }

@@ -57,7 +57,7 @@ class SettingsController
             $tabCount++;
             $tabNav.= "<li><a id='$id'>Common CSS</a></li>";
             $id.= 'C';
-            $content = file_get_contents(MBW_PLUGIN_URL . 'assets/css/elementor-styles.css');
+            $content = file_get_contents(MBW_PLUGIN_URL . 'assets/css/frontend.style.css');
             $tabContainers .= <<<CONT
 <div class="wpg-tab-container" id="{$id}">
 <h2>Common CSS Loaded, Please read comments for usage</h2>
@@ -73,7 +73,7 @@ CONT;
 
 
         //Woo CSS
-        if ($settings['load_woocommerce_css'] == 1) {
+        if (@$settings['load_woocommerce_css'] == 1) {
             $id= 'tab' . $tabCount;
             $tabCount++;
             $tabNav.= "<li><a id='$id'>Woocommerce CSS</a></li>";
@@ -91,8 +91,6 @@ CONT;
         }
 
         $tabNav.= '</ul>';
-
-
         ?>
         <div class="wrap">
             <div id="icon-themes" class="icon32"></div>
@@ -109,12 +107,19 @@ CONT;
             </form>
 
         <hr/>
+            <div>
+                For information on how to use our Entrance Animations <a href="https://plugins.wpget.net/entry-animations/" target="_blank">Click Here</a>
+            </div>
+            <div>
+                For information on how to use our Custom Styles <a href="https://plugins.wpget.net/common-styles/" target="_blank">Click Here</a>
+            </div>
+            <hr/>
 
         <?= $tabNav ?>
         <?= $tabContainers?>
 
         <script>
-            (function ($) {
+            ;(function ($) {
                 $('.wpg-tabs li a:not(:first)').addClass('inactive');
                 $('.wpg-tab-container').hide();
                 $('.wpg-tab-container:first').show();

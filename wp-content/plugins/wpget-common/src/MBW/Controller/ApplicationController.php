@@ -14,15 +14,9 @@ class ApplicationController {
 		}
 		self::$_init = true;
 
-        wp_register_script('wpg-common-vendor', MBW_PLUGIN_URL . 'assets/js/vendor.bundle.js');
-        wp_register_script('wpg-common-common', MBW_PLUGIN_URL . 'assets/js/common.bundle.min.js',['wpg-common-vendor']);
-        wp_register_script('wpg-common-admin', MBW_PLUGIN_URL . 'assets/js/admin.bundle.min.js', ['wpg-common-common','jquery']);
-        wp_register_script('wpg-common-frontend', MBW_PLUGIN_URL . 'assets/js/frontend.bundle.min.js', ['wpg-common-common','jquery']);
-        wp_register_style('wpg-common-common', MBW_PLUGIN_URL . 'assets/css/common.style.min.css');
-        wp_register_style('wpg-common-admin', MBW_PLUGIN_URL . 'assets/css/admin.style.min.css', ['wpg-common-common']);
-        wp_register_style('wpg-common-frontend', MBW_PLUGIN_URL . 'assets/css/frontend.style.min.css',  ['wpg-common-common']);
-
 		add_action( 'admin_menu', [__CLASS__, 'add_root_menu'] );
+        add_action('admin_enqueue_scripts', [__CLASS__, 'register_scripts']);
+        add_action('wp_enqueue_scripts', [__CLASS__, 'register_scripts']);;
         add_action('admin_enqueue_scripts', [__CLASS__, 'admin_enqueue_scripts']);
         add_action('wp_enqueue_scripts', [__CLASS__, 'frontend_enqueue_scripts']);;
 
@@ -37,6 +31,15 @@ class ApplicationController {
 
     }
 
+    static function register_scripts(){
+        wp_register_script('wpg-common-vendor', MBW_PLUGIN_URL . 'assets/js/vendor.bundle.js');
+        wp_register_script('wpg-common-common', MBW_PLUGIN_URL . 'assets/js/common.bundle.min.js',['wpg-common-vendor']);
+        wp_register_script('wpg-common-admin', MBW_PLUGIN_URL . 'assets/js/admin.bundle.min.js', ['wpg-common-common','jquery']);
+        wp_register_script('wpg-common-frontend', MBW_PLUGIN_URL . 'assets/js/frontend.bundle.min.js', ['wpg-common-common','jquery']);
+        wp_register_style('wpg-common-common', MBW_PLUGIN_URL . 'assets/css/common.style.min.css');
+        wp_register_style('wpg-common-admin', MBW_PLUGIN_URL . 'assets/css/admin.style.min.css', ['wpg-common-common']);
+        wp_register_style('wpg-common-frontend', MBW_PLUGIN_URL . 'assets/css/frontend.style.min.css',  ['wpg-common-common']);
+    }
     static function admin_enqueue_scripts()
     {
         wp_enqueue_style('wpg-common-admin');

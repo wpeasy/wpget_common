@@ -15,6 +15,8 @@ class ModuleController {
 		}
 		self::$_init = true;
 
+        self::$config = require_once dirname(__DIR__) . '/config.php';
+
         add_action('init', [__CLASS__, 'on_init']);
         register_deactivation_hook(MBW_PLUGIN_URL_FILE, [__CLASS__, 'on_deactivate']);
 
@@ -22,9 +24,10 @@ class ModuleController {
         add_action('admin_enqueue_scripts', [__CLASS__, 'admin_enqueue_scripts']);
 	}
 
-    function on_init(){
+    static function on_init(){
+
         if(function_exists('run_rocket_sitemap_preload') ){
-            self::$config = require_once dirname(__DIR__) . '/config.php';
+
             SettingsController::init(self::$config);
             ApplicationController::register_loaded_module(self::$config);
 
@@ -100,7 +103,8 @@ class ModuleController {
             'process/(?P<type>[\w-]+)',
             [
                 'methods' => 'GET',
-                'callback' => [__CLASS__, 'process_cache_records_endpoint']
+                'callback' => [__CLASS__, 'process_cache_records_endpoint'],
+                'permission_callback' => function(){ return 'OK'; }
             ]
         );
     }

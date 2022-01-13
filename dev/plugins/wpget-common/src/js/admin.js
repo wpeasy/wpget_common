@@ -1,3 +1,3 @@
 import '../scss/admin.scss';
-import './wp-rocket-admin';
-import './split-characters';
+import './partials/wp-rocket-admin';
+import './partials/split-characters';

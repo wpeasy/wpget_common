@@ -1,3 +1,4 @@
 import '../scss/frontend.scss';
-import './split-characters';
+import './partials/split-characters';
+import './partials/re-animate-entrance-animations';
 
