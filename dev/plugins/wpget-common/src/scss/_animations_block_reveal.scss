@@ -1,0 +1,245 @@
+/*######################################
+# Entry Animations - Block Reveal
+######################################*/
+
+.wpg-block-reveal-left{
+  --duration: var(--wpg-animated-normal) ;
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+
+  --bg-color: var(--e-global-color-primary);
+  &.bg-color-primary{ --bg-color: var(--e-global-color-primary); }
+  &.bg-color-secondary{ --bg-color: var(--e-global-color-secondary); }
+  &.bg-color-accent{ --bg-color: var(--e-global-color-accent); }
+
+  position: relative;
+  overflow: hidden;
+
+  & .elementor-widget-container{
+    animation-name: wpg-block-reveal-fade-in;
+    animation-duration: calc(var(--duration) / 2) ;
+    animation-delay: calc(var(--duration) / 2);
+    animation-fill-mode: both;
+    -webkit-animation-name: wpg-block-reveal-fade-in;
+    -webkit-animation-duration: calc(var(--duration) / 2) ;
+    -webkit-animation-delay: calc(var(--duration) / 2);
+    -webkit-animation-fill-mode: both;
+  }
+
+  &:after{
+    content: '';
+    background-color: var(--bg-color);
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    -webkit-animation-name: wpg-block-reveal-left;
+    -webkit-animation-duration: var(--duration);
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.74,-0.05, 0.29, 1.01);
+  }
+}
+
+@keyframes wpg-block-reveal-left {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+
+
+
+.wpg-block-reveal-right{
+  --duration: var(--wpg-animated-normal) ;
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+
+  --bg-color: var(--e-global-color-primary);
+  &.bg-color-primary{ --bg-color: var(--e-global-color-primary); }
+  &.bg-color-secondary{ --bg-color: var(--e-global-color-secondary); }
+  &.bg-color-accent{ --bg-color: var(--e-global-color-accent); }
+
+  position: relative;
+  overflow: hidden;
+
+  & .elementor-widget-container{
+    animation-name: wpg-block-reveal-fade-in;
+    animation-duration: calc(var(--duration) / 2) ;
+    animation-delay: calc(var(--duration) / 2);
+    animation-fill-mode: both;
+    -webkit-animation-name: wpg-block-reveal-fade-in;
+    -webkit-animation-duration: calc(var(--duration) / 2) ;
+    -webkit-animation-delay: calc(var(--duration) / 2);
+    -webkit-animation-fill-mode: both;
+  }
+
+  &:after{
+    content: '';
+    background-color: var(--bg-color);
+    position: absolute;
+    top:0;
+    right:0;
+    height: 100%;
+    animation-name: wpg-block-reveal-right;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.74,-0.05, 0.29, 1.01);
+    -webkit-animation-name: wpg-block-reveal-right;
+    -webkit-animation-duration: var(--duration);
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.74,-0.05, 0.29, 1.01);
+  }
+}
+
+@keyframes wpg-block-reveal-right {
+  0% {
+    right: 0;
+    width: 0%;
+  }
+  50% {
+    right: 0;
+    width: 100%;
+  }
+  100% {
+    right: 100%;
+    width: 0%;
+  }
+}
+
+
+
+.wpg-block-reveal-top{
+  --duration: var(--wpg-animated-normal) ;
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+
+  --bg-color: var(--e-global-color-primary);
+  &.bg-color-primary{ --bg-color: var(--e-global-color-primary); }
+  &.bg-color-secondary{ --bg-color: var(--e-global-color-secondary); }
+  &.bg-color-accent{ --bg-color: var(--e-global-color-accent); }
+
+  position: relative;
+  overflow: hidden;
+
+  & .elementor-widget-container{
+    animation-name: wpg-block-reveal-fade-in;
+    animation-duration: calc(var(--duration) / 2) ;
+    animation-delay: calc(var(--duration) / 2);
+    animation-fill-mode: both;
+    -webkit-animation-name: wpg-block-reveal-fade-in;
+    -webkit-animation-duration: calc(var(--duration) / 2) ;
+    -webkit-animation-delay: calc(var(--duration) / 2);
+    -webkit-animation-fill-mode: both;
+  }
+
+  &:after{
+    content: '';
+    background-color: var(--bg-color);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    animation-name: wpg-block-reveal-top;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.74,-0.05, 0.29, 1.01);
+    -webkit-animation-name: wpg-block-reveal-top;
+    -webkit-animation-duration: var(--duration);
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.74,-0.05, 0.29, 1.01);
+  }
+}
+
+@keyframes wpg-block-reveal-top {
+  0% {
+    top: 0;
+    height: 0%;
+  }
+  50% {
+    top: 0;
+    height: 100%;
+  }
+  100% {
+    top: 100%;
+    height: 0%;
+  }
+}
+
+
+
+.wpg-block-reveal-bottom{
+  --duration: var(--wpg-animated-normal) ;
+  &.animated-fast { --duration : var(--wpg-animated-fast) }
+  &.animated-slow { --duration : var(--wpg-animated-slow) }
+
+  --bg-color: var(--e-global-color-primary);
+  &.bg-color-primary{ --bg-color: var(--e-global-color-primary); }
+  &.bg-color-secondary{ --bg-color: var(--e-global-color-secondary); }
+  &.bg-color-accent{ --bg-color: var(--e-global-color-accent); }
+
+  position: relative;
+  overflow: hidden;
+
+  & .elementor-widget-container{
+    animation-name: wpg-block-reveal-fade-in;
+    animation-duration: calc(var(--duration) / 2) ;
+    animation-delay: calc(var(--duration) / 2);
+    animation-fill-mode: both;
+    -webkit-animation-name: wpg-block-reveal-fade-in;
+    -webkit-animation-duration: calc(var(--duration) / 2) ;
+    -webkit-animation-delay: calc(var(--duration) / 2);
+    -webkit-animation-fill-mode: both;
+  }
+
+  &:after{
+    content: '';
+    background-color: var(--bg-color);
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    animation-name: wpg-block-reveal-bottom;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.74,-0.05, 0.29, 1.01);
+    -webkit-animation-name: wpg-block-reveal-bottom;
+    -webkit-animation-duration: var(--duration);
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.74,-0.05, 0.29, 1.01);
+  }
+}
+
+@keyframes wpg-block-reveal-bottom {
+  0% {
+    bottom: 0;
+    height: 0%;
+  }
+  50% {
+    bottom: 0;
+    height: 100%;
+  }
+  100% {
+    bottom: 100%;
+    height: 0%;
+  }
+}
+
+/*
+COMMON
+ */
+@keyframes wpg-block-reveal-fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%
+  }
+}

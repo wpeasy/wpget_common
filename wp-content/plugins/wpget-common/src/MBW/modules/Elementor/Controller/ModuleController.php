@@ -94,6 +94,12 @@ class ModuleController {
                 'wpg-y-flip-in' => 'Char Y Flip',
                 'wpg-x-flip-in' => 'Char X Flip',
                 'wpg-rotate-dtr' => 'Char Rotate TR'
+            ],
+            'WPG Block' => [
+                'wpg-block-reveal-left' => 'Block Reveal Left',
+                'wpg-block-reveal-right' => 'Block Reveal Right',
+                'wpg-block-reveal-top' => 'Block Reveal Top',
+                'wpg-block-reveal-bottom' => 'Block Reveal Bottom'
             ]
         ];
     }
