@@ -100,6 +100,10 @@ class ModuleController {
                 'wpg-block-reveal-right' => 'Block Reveal Right',
                 'wpg-block-reveal-top' => 'Block Reveal Top',
                 'wpg-block-reveal-bottom' => 'Block Reveal Bottom'
+            ],
+            'WPG Highlighters' => [
+                'wpg-highlight-red' => 'Highlight Red',
+                'wpg-highlight-yellow' => 'Highlight Yellow',
             ]
         ];
     }

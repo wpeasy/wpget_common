@@ -1,0 +1,136 @@
+/*######################################
+# Entry Animations - Highlighters
+######################################*/
+
+.wpg-highlight-red {
+  overflow: visible;
+  --duration: var(--wpg-animated-normal);
+  &.animated-fast {
+    --duration: var(--wpg-animated-fast)
+  }
+  &.animated-slow {
+    --duration: var(--wpg-animated-slow)
+  }
+
+  --bg-color: #ff000099;
+  &.bg-color-primary {
+    --bg-color: var(--e-global-color-primary);
+  }
+  &.bg-color-secondary {
+    --bg-color: var(--e-global-color-secondary);
+  }
+  &.bg-color-accent {
+    --bg-color: var(--e-global-color-accent);
+  }
+
+  position: relative;
+
+  & .elementor-widget-container {
+    position: relative;
+    animation-name: wpg-block-reveal-fade-in;
+    animation-duration: calc(var(--duration) / 2);
+    animation-fill-mode: both;
+    -webkit-animation-name: wpg-block-reveal-fade-in;
+    -webkit-animation-duration: calc(var(--duration) / 2);
+    -webkit-animation-fill-mode: both;
+
+    &:before {
+      content: '';
+      z-index: -1;
+      transform: rotate(-1deg);
+      background-color: var(--bg-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      animation-name: wpg-highlight-red;
+      animation-duration: var(--duration);
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+      -webkit-animation-name: wpg-highlight-red;
+      -webkit-animation-duration: var(--duration);
+      -webkit-animation-fill-mode: both;
+      -webkit-animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+    }
+  }
+
+
+}
+
+@keyframes wpg-highlight-red {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.wpg-highlight-yellow{
+  overflow: visible;
+  --duration: var(--wpg-animated-normal);
+  &.animated-fast {
+    --duration: var(--wpg-animated-fast)
+  }
+  &.animated-slow {
+    --duration: var(--wpg-animated-slow)
+  }
+
+  --bg-color: rgba(255, 255, 0, 0.6);
+  &.bg-color-primary {
+    --bg-color: var(--e-global-color-primary);
+  }
+  &.bg-color-secondary {
+    --bg-color: var(--e-global-color-secondary);
+  }
+  &.bg-color-accent {
+    --bg-color: var(--e-global-color-accent);
+  }
+
+  position: relative;
+
+  & .elementor-widget-container {
+    position: relative;
+    animation-name: wpg-block-reveal-fade-in;
+    animation-duration: calc(var(--duration) / 2);
+    animation-fill-mode: both;
+    -webkit-animation-name: wpg-block-reveal-fade-in;
+    -webkit-animation-duration: calc(var(--duration) / 2);
+    -webkit-animation-fill-mode: both;
+
+    &:before {
+      content: '';
+      z-index: -1;
+      transform: rotate(-1deg);
+      background-color: var(--bg-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      animation-name: wpg-highlight-yellow;
+      animation-duration: var(--duration);
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+      -webkit-animation-name: wpg-highlight-yellow;
+      -webkit-animation-duration: var(--duration);
+      -webkit-animation-fill-mode: both;
+      -webkit-animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+    }
+  }
+
+
+}
+
+@keyframes wpg-highlight-yellow {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+  }
+}
+

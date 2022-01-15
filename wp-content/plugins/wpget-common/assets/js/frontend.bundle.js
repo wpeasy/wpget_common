@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./scss/frontend.scss":
+/*!****************************!*\
+  !*** ./scss/frontend.scss ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./scss/frontend.scss?");
+
+/***/ }),
+
 /***/ "./js/frontend.js":
 /*!************************!*\
   !*** ./js/frontend.js ***!
@@ -16,7 +27,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/frontend.scss */ \"./scss/frontend.scss\");\n/* harmony import */ var _partials_split_characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/split-characters */ \"./js/partials/split-characters.js\");\n/* harmony import */ var _partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/re-animate-entrance-animations */ \"./js/partials/re-animate-entrance-animations.js\");\n/* harmony import */ var _partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n//# sourceURL=webpack:///./js/frontend.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/frontend.scss */ \"./scss/frontend.scss\");\n/* harmony import */ var _partials_split_characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/split-characters */ \"./js/partials/split-characters.js\");\n/* harmony import */ var _partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/re-animate-entrance-animations */ \"./js/partials/re-animate-entrance-animations.js\");\n/* harmony import */ var _partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_partials_re_animate_entrance_animations__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./js/frontend.js?");
 
 /***/ }),
 
@@ -26,18 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
   \*******************************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ \"jquery\");\nvar $ = jQuery;\nvar repeatAnimationSelector = '.repeat-entrance-animation';\nvar waitForElementorTimeout = 500;\nconsole.log('REPEAT');\nwindow.addEventListener('DOMContentLoaded', function () {\n  trackElementsForAnimation();\n});\n\nvar trackElementsForAnimation = function trackElementsForAnimation() {\n  console.log('TRACK');\n  var options = {\n    root: null,\n    rootMargin: '0px',\n    threshold: 0.1\n  };\n  var observer = new IntersectionObserver(function (entries, observer) {\n    entries.forEach(function (e) {\n      var target = e.target;\n      var $target = $(target);\n\n      if (e.isIntersecting) {\n        /*\r\n        Get the classes to toggle here. If we get them on the observer init, Elementor would not yet have added teh animation classes.\r\n        */\n        if (undefined === target.dataset.toggleClasses) {\n          /*\r\n              waitForElementorTimeout timout allows time for Elementor to add animation classes.\r\n          */\n          setTimeout(function () {\n            setToggleClasses(target);\n          }, waitForElementorTimeout);\n        }\n\n        $target.addClass($target.data('toggle-classes'));\n        $target.css('opacity', '1');\n      } else {\n        $target.removeClass($target.data('toggle-classes'));\n        $target.css('opacity', '0');\n      }\n    });\n  }, options);\n  /*\r\n         Get a string of classes to remove and add for an element. Parse existing classes, exclude any class starting with 'elementor'\r\n     */\n\n  var setToggleClasses = function setToggleClasses(element) {\n    var toggleClasses = '';\n    element.classList.forEach(function (e) {\n      toggleClasses += e.startsWith('elementor') ? '' : e + ' ';\n    });\n    element.setAttribute('data-toggle-classes', toggleClasses);\n  };\n  /*\r\n      Start observing elements\r\n   */\n\n\n  document.querySelectorAll(repeatAnimationSelector).forEach(function (i) {\n    if (i) {\n      observer.observe(i);\n    }\n  });\n};\n\n//# sourceURL=webpack:///./js/partials/re-animate-entrance-animations.js?");
-
-/***/ }),
-
-/***/ "./scss/frontend.scss":
-/*!****************************!*\
-  !*** ./scss/frontend.scss ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./scss/frontend.scss?");
+eval("/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ \"jquery\");\nconst $ = jQuery;\r\nconst repeatAnimationSelector = '.repeat-entrance-animation';\r\nconst waitForElementorTimeout = 200;\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    trackElementsForAnimation();\r\n})\r\n\r\n/*\r\nGet a string of classes to remove and add for an element. Parse existing classes, exclude any class starting with 'elementor'\r\n*/\r\nconst setToggleClasses = (target) => {\r\n    if( undefined === target ) { return };\r\n    let toggleClasses = ''\r\n    target.classList.forEach((e) => {\r\n        toggleClasses += e.startsWith('elementor') ? '' : e + ' ';\r\n    });\r\n    target.setAttribute('data-toggle-classes', toggleClasses);\r\n}\r\n\r\nconst checkForAnimatedClass = target => {\r\n    return new Promise(resolve => {\r\n        setTimeout(() => {\r\n                resolve(target.classList.contains('animated'));\r\n        }, waitForElementorTimeout);\r\n    })\r\n}\r\n\r\nconst asyncCall = async target => {\r\n    const result = await checkForAnimatedClass(target);\r\n    if (false === result) {\r\n        asyncCall(target).then(()=>{\r\n\r\n        });\r\n    } else {\r\n\r\n        return(target);\r\n    }\r\n}\r\n\r\nconst trackElementsForAnimation = () => {\r\n    const options = {\r\n        root: null,\r\n        rootMargin: '0px',\r\n        threshold: 0.1\r\n    }\r\n\r\n    const observer = new IntersectionObserver((entries, observer) => {\r\n        entries.forEach((e) => {\r\n            let target = e.target;\r\n            let $target = $(target);\r\n            if (e.isIntersecting) {\r\n                /*\r\n                Get the classes to toggle here. If we get them on the observer init, Elementor would not yet have added teh animation classes.\r\n                */\r\n                if (undefined === target.dataset.toggleClasses) {\r\n                    /*\r\n                        waitForElementorTimeout timout allows time for Elementor to add animation classes.\r\n                    */\r\n                    asyncCall(target).then((t)=>{\r\n                        setToggleClasses(t);\r\n                    });\r\n                }\r\n                $target.addClass($target.data('toggle-classes'));\r\n                $target.css('opacity', '1');\r\n            } else {\r\n                $target.removeClass($target.data('toggle-classes'));\r\n                $target.css('opacity', '0');\r\n            }\r\n        });\r\n    }, options);\r\n\r\n\r\n    /*\r\n        Start observing elements\r\n     */\r\n    document.querySelectorAll(repeatAnimationSelector).forEach((i) => {\r\n        if (i) {\r\n            observer.observe(i);\r\n        }\r\n    });\r\n}\r\n\n\n//# sourceURL=webpack:///./js/partials/re-animate-entrance-animations.js?");
 
 /***/ }),
 

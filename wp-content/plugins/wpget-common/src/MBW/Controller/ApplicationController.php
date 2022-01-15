@@ -8,6 +8,8 @@ class ApplicationController {
 	private static $_init;
     private static $_loaded_modules = [];
 
+    const minPrefix = '';
+
 	static function init() {
 		if ( self::$_init ) {
 			return;
@@ -32,10 +34,11 @@ class ApplicationController {
     }
 
     static function register_scripts(){
+
         wp_register_script('wpg-common-vendor', MBW_PLUGIN_URL . 'assets/js/vendor.bundle.js');
-        wp_register_script('wpg-common-common', MBW_PLUGIN_URL . 'assets/js/common.bundle.min.js',['wpg-common-vendor']);
-        wp_register_script('wpg-common-admin', MBW_PLUGIN_URL . 'assets/js/admin.bundle.min.js', ['wpg-common-common','jquery']);
-        wp_register_script('wpg-common-frontend', MBW_PLUGIN_URL . 'assets/js/frontend.bundle.min.js', ['wpg-common-common','jquery']);
+        wp_register_script('wpg-common-common', MBW_PLUGIN_URL . 'assets/js/common.bundle.js',['wpg-common-vendor']);
+        wp_register_script('wpg-common-admin', MBW_PLUGIN_URL . 'assets/js/admin.bundle.js', ['wpg-common-common','jquery']);
+        wp_register_script('wpg-common-frontend', MBW_PLUGIN_URL . 'assets/js/frontend.bundle.js', ['wpg-common-common','jquery']);
         wp_register_style('wpg-common-common', MBW_PLUGIN_URL . 'assets/css/common.style.min.css');
         wp_register_style('wpg-common-admin', MBW_PLUGIN_URL . 'assets/css/admin.style.min.css', ['wpg-common-common']);
         wp_register_style('wpg-common-frontend', MBW_PLUGIN_URL . 'assets/css/frontend.style.min.css',  ['wpg-common-common']);

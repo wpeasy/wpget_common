@@ -1376,3 +1376,124 @@ COMMON
     opacity: 100%;
   }
 }
+/*######################################
+# Entry Animations - Highlighters
+######################################*/
+.wpg-highlight-red {
+  overflow: visible;
+  --duration: var(--wpg-animated-normal);
+  --bg-color: #ff000099;
+  position: relative;
+}
+.wpg-highlight-red.animated-fast {
+  --duration: var(--wpg-animated-fast) ;
+}
+.wpg-highlight-red.animated-slow {
+  --duration: var(--wpg-animated-slow) ;
+}
+.wpg-highlight-red.bg-color-primary {
+  --bg-color: var(--e-global-color-primary);
+}
+.wpg-highlight-red.bg-color-secondary {
+  --bg-color: var(--e-global-color-secondary);
+}
+.wpg-highlight-red.bg-color-accent {
+  --bg-color: var(--e-global-color-accent);
+}
+.wpg-highlight-red .elementor-widget-container {
+  position: relative;
+  animation-name: wpg-block-reveal-fade-in;
+  animation-duration: calc(var(--duration) / 2);
+  animation-fill-mode: both;
+  -webkit-animation-name: wpg-block-reveal-fade-in;
+  -webkit-animation-duration: calc(var(--duration) / 2);
+  -webkit-animation-fill-mode: both;
+}
+.wpg-highlight-red .elementor-widget-container:before {
+  content: "";
+  z-index: -1;
+  transform: rotate(-1deg);
+  background-color: var(--bg-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  animation-name: wpg-highlight-red;
+  animation-duration: var(--duration);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+  -webkit-animation-name: wpg-highlight-red;
+  -webkit-animation-duration: var(--duration);
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+}
+
+@keyframes wpg-highlight-red {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+  }
+}
+.wpg-highlight-yellow {
+  overflow: visible;
+  --duration: var(--wpg-animated-normal);
+  --bg-color: rgba(255, 255, 0, 0.6);
+  position: relative;
+}
+.wpg-highlight-yellow.animated-fast {
+  --duration: var(--wpg-animated-fast) ;
+}
+.wpg-highlight-yellow.animated-slow {
+  --duration: var(--wpg-animated-slow) ;
+}
+.wpg-highlight-yellow.bg-color-primary {
+  --bg-color: var(--e-global-color-primary);
+}
+.wpg-highlight-yellow.bg-color-secondary {
+  --bg-color: var(--e-global-color-secondary);
+}
+.wpg-highlight-yellow.bg-color-accent {
+  --bg-color: var(--e-global-color-accent);
+}
+.wpg-highlight-yellow .elementor-widget-container {
+  position: relative;
+  animation-name: wpg-block-reveal-fade-in;
+  animation-duration: calc(var(--duration) / 2);
+  animation-fill-mode: both;
+  -webkit-animation-name: wpg-block-reveal-fade-in;
+  -webkit-animation-duration: calc(var(--duration) / 2);
+  -webkit-animation-fill-mode: both;
+}
+.wpg-highlight-yellow .elementor-widget-container:before {
+  content: "";
+  z-index: -1;
+  transform: rotate(-1deg);
+  background-color: var(--bg-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  animation-name: wpg-highlight-yellow;
+  animation-duration: var(--duration);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+  -webkit-animation-name: wpg-highlight-yellow;
+  -webkit-animation-duration: var(--duration);
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.74, -0.05, 0.29, 1.01);
+}
+
+@keyframes wpg-highlight-yellow {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+  }
+}

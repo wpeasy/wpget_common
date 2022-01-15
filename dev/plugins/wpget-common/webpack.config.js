@@ -88,8 +88,7 @@ module.exports = {
 
             {
                 test: /\.js$/,
-                exclude: /node_modules|bower_components|vendor/,
-                loader: 'babel-loader'
+                exclude: /node_modules|bower_components|vendor/
             }],
 
     },

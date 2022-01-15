@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./scss/admin.scss":
+/*!*************************!*\
+  !*** ./scss/admin.scss ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./scss/admin.scss?");
+
+/***/ }),
+
 /***/ "./js/admin.js":
 /*!*********************!*\
   !*** ./js/admin.js ***!
@@ -16,7 +27,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_admin_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/admin.scss */ \"./scss/admin.scss\");\n/* harmony import */ var _partials_wp_rocket_admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/wp-rocket-admin */ \"./js/partials/wp-rocket-admin.js\");\n/* harmony import */ var _partials_wp_rocket_admin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_partials_wp_rocket_admin__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _partials_split_characters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/split-characters */ \"./js/partials/split-characters.js\");\n\n\n\n\n//# sourceURL=webpack:///./js/admin.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_admin_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/admin.scss */ \"./scss/admin.scss\");\n/* harmony import */ var _partials_wp_rocket_admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/wp-rocket-admin */ \"./js/partials/wp-rocket-admin.js\");\n/* harmony import */ var _partials_wp_rocket_admin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_partials_wp_rocket_admin__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _partials_split_characters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/split-characters */ \"./js/partials/split-characters.js\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./js/admin.js?");
 
 /***/ }),
 
@@ -26,18 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
   \****************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ \"jquery\");\nvar $ = jQuery;\n$(document).ready(function () {\n  var $button, $placeholder, type, url;\n  $('.process-button').on('click', function (e) {\n    e.preventDefault();\n    $button = $(e.currentTarget);\n    $button.parent().find('.wpg-spinner').show();\n    $placeholder = $('#wpb-response-placeholder');\n    $placeholder.html(\"<img src='/wp-admin/images/spinner-2x.gif' />\");\n    type = $button.data('type');\n    url = wpApiSettings.root + 'wpg_wprocket_debug/v1/process/' + type;\n    $.ajax({\n      url: url,\n      method: 'GET',\n      beforeSend: function beforeSend(xhr) {\n        xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);\n      }\n    }).done(function (response) {\n      $button.parent().find('.wpg-spinner').hide();\n      $placeholder.html(response.html);\n      console.log(type + \"_cached\");\n      $('#' + type + \"_cached\").html(response.cached);\n      $('#' + type + \"_not_cached\").html(response.not_cached);\n      $('#' + type + \"_total\").html(response.total);\n    });\n  });\n});\n\n//# sourceURL=webpack:///./js/partials/wp-rocket-admin.js?");
-
-/***/ }),
-
-/***/ "./scss/admin.scss":
-/*!*************************!*\
-  !*** ./scss/admin.scss ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./scss/admin.scss?");
+eval("/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ \"jquery\");\nconst $ = jQuery;\r\n\r\n$(document).ready(() => {\r\n    let $button, $placeholder, type, url;\r\n    $('.process-button').on('click', (e) => {\r\n        e.preventDefault();\r\n        $button = $(e.currentTarget);\r\n        $button.parent().find('.wpg-spinner').show();\r\n        $placeholder = $('#wpb-response-placeholder');\r\n        $placeholder.html(\"<img src='/wp-admin/images/spinner-2x.gif' />\");\r\n        type = $button.data('type');\r\n        url = wpApiSettings.root + 'wpg_wprocket_debug/v1/process/' + type;\r\n\r\n        $.ajax({\r\n            url: url,\r\n            method: 'GET',\r\n            beforeSend: function (xhr) {\r\n                xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);\r\n            }\r\n        }).done(function (response) {\r\n            $button.parent().find('.wpg-spinner').hide();\r\n            $placeholder.html(response.html);\r\n            console.log(type + \"_cached\");\r\n            $('#' + type + \"_cached\").html(response.cached);\r\n            $('#' + type + \"_not_cached\").html(response.not_cached);\r\n            $('#' + type + \"_total\").html(response.total);\r\n        });\r\n    })\r\n})\r\n\n\n//# sourceURL=webpack:///./js/partials/wp-rocket-admin.js?");
 
 /***/ }),
 

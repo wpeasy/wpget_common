@@ -1,15 +1,44 @@
 const $ = jQuery;
 const repeatAnimationSelector = '.repeat-entrance-animation';
-const waitForElementorTimeout = 500;
-
-console.log('REPEAT');
+const waitForElementorTimeout = 200;
 
 window.addEventListener('DOMContentLoaded', () => {
     trackElementsForAnimation();
 })
 
+/*
+Get a string of classes to remove and add for an element. Parse existing classes, exclude any class starting with 'elementor'
+*/
+const setToggleClasses = (target) => {
+    if( undefined === target ) { return };
+    let toggleClasses = ''
+    target.classList.forEach((e) => {
+        toggleClasses += e.startsWith('elementor') ? '' : e + ' ';
+    });
+    target.setAttribute('data-toggle-classes', toggleClasses);
+}
+
+const checkForAnimatedClass = target => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+                resolve(target.classList.contains('animated'));
+        }, waitForElementorTimeout);
+    })
+}
+
+const asyncCall = async target => {
+    const result = await checkForAnimatedClass(target);
+    if (false === result) {
+        asyncCall(target).then(()=>{
+
+        });
+    } else {
+
+        return(target);
+    }
+}
+
 const trackElementsForAnimation = () => {
-    console.log('TRACK');
     const options = {
         root: null,
         rootMargin: '0px',
@@ -28,29 +57,19 @@ const trackElementsForAnimation = () => {
                     /*
                         waitForElementorTimeout timout allows time for Elementor to add animation classes.
                     */
-                    setTimeout(() => {
-                        setToggleClasses(target);
-                    }, waitForElementorTimeout)
+                    asyncCall(target).then((t)=>{
+                        setToggleClasses(t);
+                    });
                 }
                 $target.addClass($target.data('toggle-classes'));
-                $target.css('opacity','1');
+                $target.css('opacity', '1');
             } else {
                 $target.removeClass($target.data('toggle-classes'));
-                $target.css('opacity','0');
+                $target.css('opacity', '0');
             }
         });
     }, options);
 
-    /*
-           Get a string of classes to remove and add for an element. Parse existing classes, exclude any class starting with 'elementor'
-       */
-    const setToggleClasses = (element) => {
-        let toggleClasses = ''
-        element.classList.forEach((e) => {
-            toggleClasses += e.startsWith('elementor') ? '' : e + ' ';
-        });
-        element.setAttribute('data-toggle-classes', toggleClasses);
-    }
 
     /*
         Start observing elements
