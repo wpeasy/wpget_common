@@ -7,7 +7,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const outputAbsPath = path.resolve(config.get('publicPath')); //Get absolute path to public
 
-const minSuffix = isDevMode? '' : '.min';
+const minSuffix = isDevMode ? '' : '.min';
 
 module.exports = {
 
@@ -26,12 +26,14 @@ module.exports = {
 
     entry: {
         "admin": "./js/admin.js",
-        "frontend" : "./js/frontend.js"
+        "frontend": "./js/frontend.js"
     },
 
     output: {
         path: outputAbsPath,
-        filename: "assets/js/[name].bundle" + minSuffix + '.js'
+        filename: "assets/js/[name].bundle" + minSuffix + '.js',
+        asyncChunks: true,
+        chunkFilename: 'assets/js/chunk-[id].js'
     },
 
     module: {
@@ -136,15 +138,14 @@ module.exports = {
             }),
 
             new webpack.ProvidePlugin({
-                $: "jquery",
-                jQuery: "jquery"
+                jquery: "jQuery"
             }),
 
 
             new MiniCssExtractPlugin({
                 // Options similar to the same options in webpackOptions.output
                 // both options are optional
-                filename: "assets/css/[name].style" + minSuffix  + ".css",
+                filename: "assets/css/[name].style" + minSuffix + ".css",
                 chunkFilename: "assets/css/[name]-chunk.css"
             })
         ]

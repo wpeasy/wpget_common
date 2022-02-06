@@ -39,16 +39,40 @@ const asyncCall = async target => {
 }
 
 const trackElementsForAnimation = () => {
+    let debounceArray = {};
+    let debounceDelay = 300; /* 300ms */
+
     const options = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0
     }
 
     const observer = new IntersectionObserver((entries, observer) => {
+        console.log('IntersectionObserver: ');
         entries.forEach((e) => {
-            let target = e.target;
-            let $target = $(target);
+            console.log('Entry: ', e);
+            const target = e.target;
+            const $target = $(target);
+            const elementorID = $target.data('id');
+            const date = new Date();
+            const nowInMilliSeconds = date.getTime();
+
+            /* First check for debounce timing */
+            /*
+            if( undefined === debounceArray[elementorID] ){
+                debounceArray[elementorID] = nowInMilliSeconds - debounceDelay;
+            }
+
+            console.log(debounceArray);
+            if(nowInMilliSeconds - debounceArray[elementorID] < debounceDelay ){
+                console.log('DEBOUNCE: ', elementorID);
+                return;
+            }
+            debounceArray[elementorID] = nowInMilliSeconds;
+            */
+             
+
             if (e.isIntersecting) {
                 /*
                 Get the classes to toggle here. If we get them on the observer init, Elementor would not yet have added teh animation classes.
