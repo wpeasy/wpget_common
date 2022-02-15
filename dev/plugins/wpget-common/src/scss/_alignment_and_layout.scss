@@ -2,6 +2,20 @@
 Layout and Alignment classes
 ################################*/
 
+/*WIDGET SPACING */
+.wpg-widget-spacing-small{
+  .elementor-widget {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .elementor-widget-container{
+    p:last-of-type{
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+
 /*
     Add col-align-last-el-bottom class to an elementor column to align the last element to the bottom
 */
@@ -32,14 +46,14 @@ Crocoblock Listing item
 add the class "wpg-jetengine-list-item" to the first section on the "list" design. This will align the last widget to the bottom of each
 */
 
-.wpg-jetengine-list-item > .elementor-container{
+.wpg-jetengine-list-align-last-el-bottom > .elementor-container{
   height: 100%;
 }
 
-.wpg-jetengine-list-item > .elementor-container .elementor-column > .elementor-widget-wrap{
+.wpg-jetengine-list-align-last-el-bottom > .elementor-container .elementor-column > .elementor-widget-wrap{
   flex-direction: column;
 }
 
-.wpg-jetengine-list-item .elementor-container .elementor-column .elementor-widget-wrap >.elementor-element:last-child {
+.wpg-jetengine-list-align-last-el-bottom .elementor-container .elementor-column .elementor-widget-wrap >.elementor-element:last-child {
   margin-top: auto;
 }

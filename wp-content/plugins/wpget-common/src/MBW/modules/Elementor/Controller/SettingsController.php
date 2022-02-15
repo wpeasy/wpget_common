@@ -57,11 +57,12 @@ class SettingsController
             $tabCount++;
             $tabNav.= "<li><a id='$id'>Common CSS</a></li>";
             $id.= 'C';
-            $content = file_get_contents(MBW_PLUGIN_URL . 'assets/css/elementor-styles.css');
+            $content = file_get_contents(MBW_PLUGIN_URL . 'assets/css/frontend.style.css');
+            $content .= file_get_contents(MBW_PLUGIN_URL . 'assets/css/common.style.css');
             $tabContainers .= <<<CONT
 <div class="wpg-tab-container" id="{$id}">
 <h2>Common CSS Loaded, Please read comments for usage</h2>
-<h3>Note: This is loaded after Custom CSS. To override make your class more specific.</h3>
+<h3>Note: This is loaded after Custom CSS in Plugin Assets. To override make your class more specific.</h3>
 <h3>You can do this by prefixing the override with something like body.elementor-default (for default template)</h3>
 <pre id="wpg_css"><code>
 {$content}

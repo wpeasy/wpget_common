@@ -4,6 +4,7 @@ import Splitting from 'splitting';
 const selector = '.split-characters';
 const subElements  = ['p','h1','h2','h3','h4'];
 let $;
+
 window.addEventListener('DOMContentLoaded', ()=>{
     $ = jQuery;
     splitCharacters();
@@ -28,7 +29,7 @@ const splitCharacters = ()=>{
 const rotateWords = ()=>{
    const $splits = $('.wpg-word-rotate .splitting.words');
    $splits.each((i,e)=>{
-       $e = $(e);
+       const $e = $(e);
        const heights = $e.find('.char').map((e)=>{
            return e.outerHeight;
        });

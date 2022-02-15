@@ -29,20 +29,53 @@ Force Colours
 /************
 Redefine <b> as Colours
  */
-.bold-to-primary b{
-  color: var(--e-global-color-primary);
+.to-primary{
+  &-bold{
+    & b{
+      color: var(--e-global-color-primary);
+    }
+  }
+  &-mark{
+    & mark{
+      background-color: unset;
+      color: var(--e-global-color-primary);
+    }
+  }
 }
 
-.bold-to-secondary b{
-  color: var(--e-global-color-secondary);
+.to-secondary{
+  &-bold{
+    & b{
+      color: var(--e-global-color-secondary);
+    }
+  }
+  &-mark{
+    & mark{
+      background-color: unset;
+      color: var(--e-global-color-secondary);
+    }
+  }
 }
 
-.bold-to-accent b{
-  color: var(--e-global-color-accent);
+.to-accent{
+  &-bold{
+    & b{
+      color: var(--e-global-color-accent);
+    }
+  }
+  &-mark{
+    & mark{
+      background-color: unset;
+      color: var(--e-global-color-accent);
+    }
+  }
 }
+
 
 .bold-to-normal b{
   font-weight: normal !important;
 }
+
+
 
 

@@ -9,6 +9,9 @@ const outputAbsPath = path.resolve(config.get('publicPath')); //Get absolute pat
 
 const minSuffix = isDevMode ? '' : '.min';
 
+/*
+
+ */
 module.exports = {
 
     mode: mode,
@@ -25,15 +28,14 @@ module.exports = {
     },
 
     entry: {
-        "admin": "./js/admin.js",
-        "frontend": "./js/frontend.js"
+
+        "frontend": "./js/frontend.js",
+        "admin": "./js/admin.js"
     },
 
     output: {
         path: outputAbsPath,
-        filename: "assets/js/[name].bundle" + minSuffix + '.js',
-        asyncChunks: true,
-        chunkFilename: 'assets/js/chunk-[id].js'
+        filename: "assets/js/[name].bundle" + minSuffix + '.js'
     },
 
     module: {

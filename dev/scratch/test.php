@@ -1,53 +1,16 @@
 <?php
-add_action('wp_footer', function () {
-    if (!defined('ELEMENTOR_VERSION')) {
-        return;
-    }
-    ?>
-    <script>
-        const $ = jQuery;
+add_filter( 'elementor/controls/animations/additional_animations', function ($current){
 
-        console.log(elementorFrontend); //Logs an object
-        console.log(elementorFrontend.hooks) //logs undefined
+    $new = [
+        'WPG Custom' => [
+            'wpg-custom1' => 'wpg-custom1',
+            'wpg-custom2' => 'wpg-custom2',
+            'wpg-custom3' => 'wpg-custom3',
+            'wpg-custom4' => 'wpg-custom4',
+            'wpg-custom5' => 'wpg-custom5'
+        ]
+    ];
 
-        setTimeout(() => {
-            console.log(elementorFrontend); //Logs an object
-            console.log(elementorFrontend.hooks) //logs an object
-        }, 100);
-    </script>
-    <?php
-});
+    return array_merge($current, $new);
 
-
-
-add_shortcode('cb_get_hours_for_current_day', function ($args){
-
-    $args = shortcode_atts( array(
-        'time_format' => 'H:ia',
-        'show_name' => 'false',
-        'separator' => '-'
-    ), $args );
-
-
-
-    $page = jet_engine()->options_pages->registered_pages[$args['page_slug']];
-    $value = $page->get($args['option_name']);
-
-    $selectedItem = null;
-    foreach( $value as $item){
-        if($item['day'] != date('w')){
-            continue;
-        }else{
-            $selectedItem = $item;
-            break;
-        }
-    }
-
-    $str = $args['show_name'] == 'true' ? $selectedItem['name'] : '';
-    $open = date($args['time_format'], strtotime($selectedItem['open']));
-    $str.= $open;
-
-    return $str;
-
-
-});
+} );

@@ -74,14 +74,7 @@ class ModuleController {
                 'slit-in-vertical' => 'Slit in Vertical',
                 'slit-in-horizontal' => 'Slit in Horizontal',
                 'slit-in-diagonal-1' => 'Slit in Diag 1',
-                'slit-in-diagonal-2' => 'Slit in Diag 2',
-                'customAnimation1' => 'Custom Animation 1',
-                'customAnimation2' => 'Custom Animation 2',
-                'customAnimation3' => 'Custom Animation 3'
-            ],
-            'WPGet Inner Animations' => [
-                'wpg-highlighter-red' => 'Red Highlighter',
-                'wpg-highlighter-yellow' => 'Yellow Highlighter'
+                'slit-in-diagonal-2' => 'Slit in Diag 2'
             ],
             'WPGet Text' => [
                 'wpg-char-drop-rotate' => 'Char Drop & Rotate',
@@ -104,6 +97,13 @@ class ModuleController {
             'WPG Highlighters' => [
                 'wpg-highlight-red' => 'Highlight Red',
                 'wpg-highlight-yellow' => 'Highlight Yellow',
+            ],
+            'WPG Custom' => [
+                'wpg-custom1' => 'wpg-custom1',
+                'wpg-custom2' => 'wpg-custom2',
+                'wpg-custom3' => 'wpg-custom3',
+                'wpg-custom4' => 'wpg-custom4',
+                'wpg-custom5' => 'wpg-custom5'
             ]
         ];
     }

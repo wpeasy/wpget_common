@@ -67,6 +67,10 @@ class ModuleController {
             );
             return date($args['format']);
         });
+
+        add_shortcode('date_mofified', function (){
+            return get_the_modified_date('d/m/Y');
+        });
     }
 
     static function admin_enqueue_scripts()

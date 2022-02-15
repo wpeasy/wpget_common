@@ -56,9 +56,9 @@ class ApplicationController {
     static function frontend_enqueue_scripts()
     {
         wp_enqueue_style('wpg-common-frontend');
-        wp_enqueue_script('wpg-common-frontend');
-        wp_enqueue_script('wpg-select2');
-        wp_enqueue_style('wpg-select2');
+        wp_enqueue_script('wpg-common-frontend','', [], false, true);
+        wp_enqueue_script('wpg-select2','', [], false, true);
+        wp_enqueue_style('wpg-select2','', [], false, true);
     }
 
 

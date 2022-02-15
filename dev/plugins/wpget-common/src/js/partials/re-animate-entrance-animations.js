@@ -49,9 +49,7 @@ const trackElementsForAnimation = () => {
     }
 
     const observer = new IntersectionObserver((entries, observer) => {
-        console.log('IntersectionObserver: ');
         entries.forEach((e) => {
-            console.log('Entry: ', e);
             const target = e.target;
             const $target = $(target);
             const elementorID = $target.data('id');

@@ -22,7 +22,7 @@ class ModuleController {
         add_action('admin_enqueue_scripts', [__CLASS__, 'admin_enqueue_scripts']);
 	}
 
-    function on_init(){
+    static function on_init(){
         if(function_exists('run_rocket_sitemap_preload') ){
             self::$config = require_once dirname(__DIR__) . '/config.php';
             SettingsController::init(self::$config);
