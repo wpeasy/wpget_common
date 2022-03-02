@@ -27,7 +27,7 @@ Force Colours
 }
 
 /************
-Redefine <b> as Colours
+Redefine <b> and <mark> as Colours
  */
 .to-primary{
   &-bold{
@@ -72,9 +72,44 @@ Redefine <b> as Colours
 }
 
 
-.bold-to-normal b{
+.to-normal-weight b{
   font-weight: normal !important;
 }
+
+/*#######################
+ Text underlines and blocks
+*/
+.wpg-underline{
+  position: relative;
+  z-index: 2;
+}
+.wpg-underline:before{
+  content:"";
+  z-index: -1;
+  position: absolute;
+  bottom: -0.2rem;
+  left:0;
+  width: 100%;
+  height: var(--height);
+  background-color: var(--color);
+}
+
+.wpg-block{
+  position: relative;
+  display: inline-block;
+  padding: var(--padding);
+}
+.wpg-block:before{
+  content:"";
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color);
+}
+
 
 
 

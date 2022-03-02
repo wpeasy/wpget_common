@@ -3,16 +3,35 @@ Layout and Alignment classes
 ################################*/
 
 /*WIDGET SPACING */
-.wpg-widget-spacing-small{
-  .elementor-widget {
-    margin-bottom: 0.5rem !important;
-  }
+.wpg-widget-spacing{
 
-  .elementor-widget-container{
-    p:last-of-type{
-      margin-bottom: 0 !important;
+  &-none{
+    .elementor-widget {
+      margin-bottom: 0px !important;
     }
   }
+
+  &-small{
+    .elementor-widget {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  &-medium{
+    .elementor-widget {
+      margin-bottom: 1rem !important;
+    }
+  }
+
+  &-none, &-small, &-medium{
+    .elementor-widget-container{
+      p:last-of-type{
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+
 }
 
 

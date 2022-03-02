@@ -38,7 +38,7 @@ Force Colours
 }
 
 /************
-Redefine <b> as Colours
+Redefine <b> and <mark> as Colours
  */
 .to-primary-bold b {
   color: var(--e-global-color-primary);
@@ -64,8 +64,44 @@ Redefine <b> as Colours
   color: var(--e-global-color-accent);
 }
 
-.bold-to-normal b {
+.to-normal-weight b {
   font-weight: normal !important;
+}
+
+/*#######################
+ Text underlines and blocks
+*/
+.wpg-underline {
+  position: relative;
+  z-index: 2;
+}
+
+.wpg-underline:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+  width: 100%;
+  height: var(--height);
+  background-color: var(--color);
+}
+
+.wpg-block {
+  position: relative;
+  display: inline-block;
+  padding: var(--padding);
+}
+
+.wpg-block:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color);
 }
 
 /*
@@ -194,10 +230,16 @@ Elementor Standard Widget Fixes
 Layout and Alignment classes
 ################################*/
 /*WIDGET SPACING */
+.wpg-widget-spacing-none .elementor-widget {
+  margin-bottom: 0px !important;
+}
 .wpg-widget-spacing-small .elementor-widget {
   margin-bottom: 0.5rem !important;
 }
-.wpg-widget-spacing-small .elementor-widget-container p:last-of-type {
+.wpg-widget-spacing-medium .elementor-widget {
+  margin-bottom: 1rem !important;
+}
+.wpg-widget-spacing-none .elementor-widget-container p:last-of-type, .wpg-widget-spacing-small .elementor-widget-container p:last-of-type, .wpg-widget-spacing-medium .elementor-widget-container p:last-of-type {
   margin-bottom: 0 !important;
 }
 
